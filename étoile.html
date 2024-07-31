@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Félicitations</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: 'Pacifico', cursive;
+        }
+        .card {
+            width: 600px;
+            height: 400px;
+            perspective: 1000px;
+        }
+        .inner-card {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            cursor: pointer;
+            transform: rotateY(180deg); /* Start with the back visible */
+        }
+        .card.open .inner-card {
+            transform: rotateY(0deg);
+        }
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+        .front {
+            background-color: white;
+            transform: rotateY(180deg);
+        }
+        .back {
+            background-color: #ffe4e1;
+        }
+        .inner-card h1 {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+        .inner-card p {
+            font-size: 1.5em;
+            margin: 5px 0;
+        }
+        .inner-card img {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card" onclick="this.classList.toggle('open')">
+    <div class="inner-card">
+        <div class="front">
+            <h1>Bravo pour les 1000 points Ines</h1>
+            <img src="1836_9377e.gif" alt="Étoile">
+            <p>31/07</p>
+        </div>
+        <div class="back">
+            <h1>Félicitations !</h1>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
