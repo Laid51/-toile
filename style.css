@@ -25,10 +25,10 @@ body, html {
     transform-style: preserve-3d;
     transition: transform 1s;
     cursor: pointer;
-    transform: rotateY(180deg); /* Start with the back visible */
+    transform: rotateY(0deg); /* Start with the back visible */
 }
 .card.open .inner-card {
-    transform: rotateY(0deg);
+    transform: rotateY(180deg);
 }
 .front, .back {
     position: absolute;
